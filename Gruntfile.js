@@ -1,5 +1,14 @@
-/*global module:false*/
+/*global module:false */
 module.exports = function(grunt) {
+
+    grunt.registerTask("reload", "reload Chrome on OS X",
+        function() {
+            require("child_process").exec("osascript " +
+                "-e 'tell application \"Google Chrome\" " +
+                "to tell the active tab of its first window' " +
+                "-e 'reload' " +
+            "-e 'end tell'");
+        });
 
   // Project configuration.
   grunt.initConfig({
@@ -17,7 +26,7 @@ module.exports = function(grunt) {
         unused: true,
         boss: true,
         eqnull: true,
-        globals: {}
+        globals: {require:true}
       },
       gruntfile: {
         src: 'Gruntfile.js'
@@ -28,13 +37,9 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      shower: {
+      src: {
           files: "src/*",
-          tasks: "shower"
-      },
-      connect: {
-          files: "src/",
-          tasks: "connect"
+          tasks: ['shower', 'reload']
       }
     },
 
