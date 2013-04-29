@@ -1,0 +1,11 @@
+{
+    "name": "bergenjs-grun",
+    "dependencies": {
+        "grunt": "*",
+        "grunt-shower-markdown": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-connect": "*",
+        "grunt-curl": "*"
+    }
+}
