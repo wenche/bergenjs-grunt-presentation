@@ -56,6 +56,21 @@ uglify: {
 ```
 
 !SLIDE
+## @@[grunt handlebars](https://npmjs.org/package/grunt-contrib-handlebars)@@
+```
+handlebars: {
+  compile: {
+    options: {
+      namespace: 'JST'
+    },
+    files: {
+      'path/to/templates.js': 'views/*.hbs'
+    }
+  }
+}
+```
+
+!SLIDE
 
 ## @@[grunt coffee](https://npmjs.org/package/grunt-contrib-coffee)@@
 
@@ -72,7 +87,6 @@ coffee: {
 !SLIDE #curl
 
 ## @@[grunt curl](https://npmjs.org/package/grunt-curl)@@
-Grab online assets
 ```
 curl: {
   'scripts/jquery.js': 'http://code.jquery.com/jquery-1.9.1.js'
