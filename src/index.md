@@ -20,11 +20,9 @@ Automate common tasks for you.
 
 !SLIDE
 
-## Automate all the things
+## @@grunt present@@
 
-```bash
-grunt present
-```
+Automate all the things!
 
 1. Fetches the latest version of dependencies
 2. Compiles my markdown to html
@@ -46,7 +44,7 @@ module.exports = function(grunt) {
 
 !SLIDE
 
-## @@grunt jshint@@
+## @@[grunt jshint](https://npmjs.org/package/grunt-contrib-jshint)@@
 
 ```js
 jshint: {
@@ -57,7 +55,7 @@ jshint: {
 ```
 
 !SLIDE
-## @@grunt uglify@@
+## @@[grunt uglify](https://npmjs.org/package/grunt-contrib-uglify)@@
 ```
 uglify: {
   my_target: {
@@ -69,7 +67,7 @@ uglify: {
 
 !SLIDE
 
-## @@grunt coffee@@
+## @@[grunt coffee](https://npmjs.org/package/grunt-contrib-coffee)@@
 
 ```
 coffee: {
@@ -81,21 +79,68 @@ coffee: {
 }
 ```
 
-!SLIDE
-
-## How bout some CSS?
-
-* All popular pre-processors available
-* image-inliners
-* csscss
-* +lots of other tools
-
 !SLIDE #curl
 
-## @@grunt curl@@
+## @@[grunt curl](https://npmjs.org/package/grunt-curl)@@
 Grab online assets
 ```
 curl: {
   'scripts/jquery.js': 'http://code.jquery.com/jquery-1.9.1.js'
+}
+```
+
+!SLIDE
+
+## @@[grunt compass](https://npmjs.org/package/grunt-contrib-compass)@@
+
+```
+compass: {
+  dist: {
+    dev: {
+      sassDir: 'sass',
+      cssDir: 'css'
+    }
+  }
+}
+```
+
+!SLIDE
+
+## Compile on change
+
+```
+watch: {
+  css: {
+    files: "sass/*.sass",
+    tasks: "compass"
+  }
+}
+```
+
+!SLIDE
+
+## Other CSS Tools
+
+* [Stylus](https://npmjs.org/package/grunt-contrib-stylus)
+* [Less](https://npmjs.org/package/grunt-recess)
+* [CSSLint](https://npmjs.org/package/grunt-contrib-csslint)
+* [CSSCSS](https://npmjs.org/package/grunt-csscss)
+* [CSSMin](https://npmjs.org/package/grunt-contrib-cssmin)
+
+!SLIDE tight
+
+## @@[grunt jasmine](https://npmjs.org/package/grunt-contrib-jasmine)@@
+
+```
+jasmine: {
+  mylib: {
+    src: 'scripts/*.js',
+    options: {
+      vendor: [
+        'libs/jquery.js'
+      ],
+      specs:  'specs/*.js'
+    }
+  }
 }
 ```

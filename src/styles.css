@@ -1,3 +1,15 @@
 #grunt {
     text-align: center;
 }
+
+.slide pre code {
+    line-height: 38px;
+}
+
+.full section.slide:after {
+    top: 60px;
+    bottom: auto;
+    left: auto;
+    right: 125px;
+    color: whitesmoke;
+}
