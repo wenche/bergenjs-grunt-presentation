@@ -2,7 +2,7 @@
 
 by [Raymond Julin](http://raymondjulin.com/)
 
-!SLIDE #grunt
+!SLIDE center
 
 ![Image](images/grunt-logo.png)
 
@@ -10,24 +10,14 @@ by [Raymond Julin](http://raymondjulin.com/)
 
 ## A JavaScript task runner
 
-Automate common tasks for you.
-
 * Linting
 * Building
 * Testing
 * Compiling
 * +++
 
-!SLIDE
+!SLIDE #automate-all-the-things
 
-## @@grunt present@@
-
-Automate all the things!
-
-1. Fetches the latest version of dependencies
-2. Compiles my markdown to html
-3. Fires up a web server
-4. Reloads chrome
 
 !SLIDE
 
@@ -106,7 +96,7 @@ compass: {
 
 !SLIDE
 
-## Compile on change
+## @@grunt watch@@
 
 ```
 watch: {
@@ -116,6 +106,8 @@ watch: {
   }
 }
 ```
+
+Compile, build, test. Do it all on all changes.
 
 !SLIDE
 
@@ -176,7 +168,27 @@ docco: {
 
 !SLIDE
 
-## On the side
+## Complete example
+
+@@@grunt present@@@
+
+-? D/l presentation tool @@grunt-curl@@
+-? Generate slide markup from markdown @@grunt-shower-markdown@@
+-? Start a web server @@grunt-connect@@
+-? Reload web page @@custom task@@
+
+!SLIDE
+
+## Multi task
+
+```
+grunt.registerTask('present', [
+  'curl',
+  'shower',
+  'connect',
+  'reload'
+]);
+```
 
 !SLIDE
 
@@ -194,15 +206,31 @@ shower: {
 
 !SLIDE
 
-## @@grunt present@@
-1. D/l presentation tool
-2. Generate slide markup from markdown
-3. Start a web server
+## @@[grunt connect](https://npmjs.org/package/grunt-contrib-connect)@@
 
 ```
-grunt.registerTask('present', [
-  'curl',
-  'shower',
-  'connect'
-]);
+connect: {
+  server: {
+    options: {
+      port: 9091,
+      base: './',
+      keepalive: true
+    }
+  }
+}
 ```
+
+!SLIDE
+
+## @@grunt reload@@
+
+  ```
+  grunt.registerTask("@@reload@@", "reload Chrome on OS X",
+    function() {
+      require("child_process").exec("osascript " +
+        "-e 'tell application \"Google Chrome\" " +
+        "to tell the active tab of its first window' " +
+        "-e 'reload' " +
+      "-e 'end tell'");
+    });
+  ```

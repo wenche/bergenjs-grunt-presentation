@@ -1,9 +1,19 @@
-#grunt {
+.center {
     text-align: center;
 }
 
+.center .img {
+    margin: auto 0;
+}
+
+#automate-all-the-things div {
+    background: url("/images/automate.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
 .full section.slide pre code {
-    line-height: 38px;
+    line-height: 34px;
 }
 
 .full section.slide:after {
