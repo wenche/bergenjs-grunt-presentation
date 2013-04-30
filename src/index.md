@@ -144,3 +144,65 @@ jasmine: {
   }
 }
 ```
+
+!SLIDE
+
+## ... with AMD support:
+
+```
+jasmine: {
+  mylib: {
+    options: {
+      template: require('grunt-template-jasmine-requirejs')
+    }
+  }
+}
+```
+
+!SLIDE
+
+## @@[grunt docco](https://npmjs.org/package/grunt-docco)@@
+
+```
+docco: {
+  docs: {
+    src: 'scripts/*.js',
+    options: {
+      output: 'docs/'
+    }
+  }
+}
+```
+
+!SLIDE
+
+## On the side
+
+!SLIDE
+
+## @@[grunt shower](https://npmjs.org/package/grunt-shower-markdown)@@
+
+```
+shower: {
+  grunt: {
+    title: "BergenJS Grunt",
+    src: "src/index.md",
+    styles: "src/styles.css"
+  }
+}
+```
+
+!SLIDE
+
+## @@grunt present@@
+1. D/l presentation tool
+2. Generate slide markup from markdown
+3. Start a web server
+
+```
+grunt.registerTask('present', [
+  'curl',
+  'shower',
+  'connect'
+]);
+```
