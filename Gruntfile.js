@@ -15,17 +15,6 @@ module.exports = function(grunt) {
     // Task configuration.
     jshint: {
       options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
         globals: {require:true}
       },
       gruntfile: {
@@ -54,14 +43,9 @@ module.exports = function(grunt) {
     },
 
     shower: {
-        bergenjs: {
-            title: "BergenJS",
-            src: "src/intro.md",
-            styles: "src/styles.css"
-        },
         grunt: {
-            title: "BergenJS Grunt",
-            src: "src/index.md",
+            title: "Grunt.js",
+            src: "src/gruntjs.md",
             styles: "src/styles.css"
         }
     },

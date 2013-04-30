@@ -1,6 +1,6 @@
-# BergenJS Grunt
+# Grunt.js
 
-[Author](http://raymondjulin.com/)
+by [Raymond Julin](http://raymondjulin.com/)
 
 !SLIDE #grunt
 
