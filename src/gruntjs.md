@@ -1,6 +1,7 @@
 # Grunt.js
 
 by [Raymond Julin](http://raymondjulin.com/)
+Modified by Wenche
 
 !SLIDE center
 
@@ -14,7 +15,7 @@ by [Raymond Julin](http://raymondjulin.com/)
 * Building
 * Testing
 * Compiling
-* +++
+* +++ And many more
 
 !SLIDE #automate-all-the-things
 
@@ -123,15 +124,6 @@ watch: {
 
 Compile, build, test. Do it all on all changes.
 
-!SLIDE
-
-## Other CSS Tools
-
-* [Stylus](https://npmjs.org/package/grunt-contrib-stylus)
-* [Less](https://npmjs.org/package/grunt-recess)
-* [CSSLint](https://npmjs.org/package/grunt-contrib-csslint)
-* [CSSCSS](https://npmjs.org/package/grunt-csscss)
-* [CSSMin](https://npmjs.org/package/grunt-contrib-cssmin)
 
 !SLIDE tight
 
@@ -179,17 +171,18 @@ docco: {
   }
 }
 ```
+(Docco er et dokumentasjonsverktøy, brukt f.eks. i ## @@[Backbone-dokumentasjonen](http://backbonejs.org/docs/backbone.html)@@
 
 !SLIDE
 
 ## Complete example
 
-@@@grunt present@@@
+@@@grunt present!@@@
 
 -? D/l presentation tool @@grunt-curl@@
 -? Generate slide markup from markdown @@grunt-shower-markdown@@
 -? Start a web server @@grunt-connect@@
--? Reload web page @@custom task@@
+-? Watch src
 
 !SLIDE
 
@@ -200,7 +193,7 @@ grunt.registerTask('present', [
   'curl',
   'shower',
   'connect',
-  'reload'
+  'watch'
 ]);
 ```
 
@@ -211,7 +204,7 @@ grunt.registerTask('present', [
 ```
 shower: {
   grunt: {
-    title: "BergenJS Grunt",
+    title: "Fagmøte Grunt",
     src: "src/index.md",
     styles: "src/styles.css"
   }
@@ -228,7 +221,6 @@ connect: {
     options: {
       port: 9091,
       base: './',
-      keepalive: true
     }
   }
 }
