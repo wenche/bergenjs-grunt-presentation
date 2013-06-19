@@ -6,9 +6,11 @@ Dette er presentasjonen jeg viste på fagmøtet om Grunt. Presentasjonen er en v
 ## Kjøre presentasjonen
 
 1. Klon repo-et (git clone git@github.com:wenche/frontend-meeting-grunt-presentation.git)
-2. Installer node-moduler (npm install)
-3. Kjør presentasjonen (grunt present)
-4. Gå til http://localhost:9091/grunt.html?full#1
+2. Initialiser submodule (git submodule init)
+3. Oppdater submodule (git submodule update)
+4. Installer node-moduler (npm install)
+5. Kjør presentasjonen (grunt present)
+6. Gå til http://localhost:9091/grunt.html?full#1
 
 ## Andre ting å gjøre
 
